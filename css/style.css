@@ -1,0 +1,436 @@
+/************* GERAL ****************/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+ }
+
+.container{
+    margin: 0 auto;
+    max-width: 1100px;
+}
+
+/***************************************/
+
+/************* HEADER ******************/
+
+.header{
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header img{
+    width: 120px;
+}
+
+.banner-principal{
+    width: 100%;
+    background: url("../img/banner-gb.jpg") no-repeat center;
+    background-size: cover;
+    padding-bottom: 250px;
+}
+
+.menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 0 0px #fff, 0 0 0 0px #fff;
+    transition: box-shadow .5s ease-in-out;
+}
+
+.menu:hover{
+    box-shadow: 0 0 0 5px #fff, 0 0 0 5px #fff;
+}
+
+.hamburguer{
+    position: relative;
+    display: block;
+    background: #9f19ab;
+    width: 30px;
+    height: 3px;
+    border-radius: 20px;
+    transition: .5s ease-in-out;
+}
+
+.hamburguer:before, .hamburguer:after {
+    background: #9f19ab;
+    content: '';
+    border-radius: 10px;
+    display: block;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transition: .5s ease-in-out;
+}
+
+.hamburguer:before{
+    top: -10px;
+}
+
+.hamburguer:after{
+    top: 10px;
+}
+
+input{
+    display: none;
+}
+
+input:checked ~ .lista-menu{
+    opacity: 1;
+}
+
+input:checked ~ label .menu{
+    box-shadow: 0 0 0 450px #fff, 0 0 0 450px #fff;
+}
+
+input:checked ~ label .hamburguer{
+    transform: rotate(45deg);
+}
+
+input:checked ~ label .hamburguer:before{
+    transform: rotate(90deg);
+    top: 0;
+}
+
+input:checked ~ label .hamburguer:after{
+    transform: rotate(90deg);
+    top: 0;
+}
+
+.header a{
+    display: block;
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: #9f19ab;
+    text-decoration: none;
+}
+
+.header a:hover{
+    color: #ee3ac1;
+
+}
+
+.header ul{
+    position: absolute;
+    top: 120px;
+    right: 18%;
+    opacity: 0;
+    transition: .2s ease-in-out;
+    list-style-type: none;
+}
+
+/******************************************************/
+
+.texto-banner{
+    max-width: 500px;
+}
+
+.texto-banner h1{
+    padding-top: 60px;
+    color: white;
+    font-weight: 700;
+    font-size: 40px;
+    letter-spacing: 1px;
+}
+
+.texto-banner p{
+    padding-top: 30px;
+    color: #fff;
+}
+
+/********************* BUTTON **********************/
+
+.texto-banner a{
+    overflow: hidden;
+    position: absolute;
+    text-decoration: none;
+    color: #ee3ac1;
+    font-weight: 500;
+    letter-spacing: 1px;
+    font-size: 18px;
+    margin-top: 40px;
+    padding: 20px 50px;
+    box-shadow: 0 20px 50px rgba(0,0,0,.5);
+}
+
+.texto-banner a:before{
+    content: '';
+    top: 2px;
+    left: 2px;
+    bottom: 2px;
+    width: 50%;
+    background: rgba(255,255,255,0.05);
+}
+
+.texto-banner a span:nth-child(1){
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to right, #1c0550,#ee3ac1);
+    animation: animate1 2s linear infinite;
+}
+
+@keyframes animate1{
+    0%{
+        transform: translateX(-100%)
+    }
+    100%{
+        transform: translateX(100%)
+    }
+}
+
+.texto-banner a span:nth-child(2){
+    position:absolute;
+    top: 0;
+    right: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to bottom, #1c0550,#ee3ac1);
+    animation: animate2 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes animate2{
+    0%{
+        transform: translateY(-100%);
+    }
+    100%{
+        transform: translateY(100%);
+    }
+}
+
+.texto-banner a span:nth-child(3){
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to left, #1c0550,#ee3ac1);
+    animation: animate3 2s linear infinite;
+}
+
+@keyframes animate3{
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(-100%);
+    }
+}
+
+.texto-banner a span:nth-child(4){
+    position:absolute;
+    top: 0;
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(to top, #1c0550,#ee3ac1);
+    animation: animate4 2s linear infinite;
+    animation-delay: 1s;
+}
+
+@keyframes animate4{
+    0%{
+        transform: translateY(100%);
+    }
+    100%{
+        transform: translateY(-100%);
+    }
+}
+
+/************************************************************/
+
+/**************************** SOBRE ***************************/
+
+.sobre-flex{
+    padding: 80px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sobre-flex div{
+    max-width: 50%;
+}
+
+.sobre-flex h3{
+    color: #9F19AB;
+    padding-bottom: 30px;
+    font-size: 40px;
+}
+
+.sobre-flex p{
+    margin-top: 20px;
+    color: #595959;
+    font-size: 16px;
+    padding-bottom: 10px;
+    line-height: 22px;
+}
+
+.sobre-flex img{
+    width: 500px;
+    transition: .5s;
+}
+
+.sobre-flex img:hover{
+    margin-right: 20px;
+}
+
+
+/*********************** MINHAS HABILIDADES *****************************/
+
+.minhas-habilidades{
+    padding: 80px 0;
+    background: rgba(159, 25, 171, 0.06);
+}
+
+.minhas-habilidades h2{
+    padding-bottom: 30px;
+    font-size: 40px;
+    text-align: center;
+    color: #9F19AB;
+}
+
+.minhas-habilidades-flex{
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+}
+
+.minhas-habilidades-flex div{
+    margin: 0;
+    padding: 60px 30px;
+    border-radius: 15px;
+    transition: all .3s ease;
+}
+
+.minhas-habilidades-flex div:hover{
+    margin-top: -10px;
+    cursor: pointer;
+    background: white;
+}
+
+.minhas-habilidades-flex img{
+    width: 50px;
+}
+
+.minhas-habilidades-flex p{
+    margin-top: 20px;
+    color: #595959;
+    font-size: 16px;
+}
+
+/*******************************************/
+
+/******************* CONTATO ***************/
+
+.contato{
+    padding: 80px 0 100px 0;
+    background: linear-gradient(80deg, #9F19AB, #FF63CE);
+    text-align: center;
+}
+
+.contato h2{
+    padding-bottom: 30px;
+    font-size: 40px;
+    color: white;
+}
+
+.contato form{
+    padding-top: 30px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.contato input[type=text]{
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+    padding: 16px;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 15px;
+    margin-bottom: 10px;
+    font-size: 18px;
+    color: white;
+}
+
+::-webkit-input-placeholder {
+    color: rgba(255,255,255,0.8);
+ }
+ 
+ :-moz-placeholder {
+    color: rgba(255,255,255,0.8);
+ }
+ 
+ ::-moz-placeholder {
+    color: rgba(255,255,255,0.8); 
+ }
+ 
+ :-ms-input-placeholder {  
+    color: rgba(255,255,255,0.8); 
+ }
+
+textarea{
+    resize: none;
+    font-size: 18px;
+    border: 1px solid white;
+    padding: 20px;
+    background: transparent;
+    border-radius: 15px;
+    width: 100%;
+    height: 200px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.contato a{
+    padding: 15px 35px;
+    color: white;
+    font-weight: 600;
+    background: transparent;
+    border: 1px solid white;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: all .2s ease;
+}
+
+.contato a:hover{
+    color: #9F19AB;
+    background: white;
+    padding: 18px 38px;
+}
+
+/**************************************/
+
+/***************** FOOTER ****************/
+
+footer{
+    font-size: 18px;
+    text-align: center;
+    padding: 40px 0;
+    background: #DDDDDD;
+    color: #4F4F4F;
+}
+
+
+
+
+
